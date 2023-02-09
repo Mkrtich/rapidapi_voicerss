@@ -1,0 +1,7 @@
+{
+    "get_url": "https://voicerss-text-to-speech.p.rapidapi.com/",
+    "post_url": "https://voicerss-text-to-speech.p.rapidapi.com/",
+    "X-RapidAPI-Key": "3a390fd6cfmsh10757c0e4900b6dp1c6bffjsn9dfeb28b52fb",
+    "X-RapidAPI-Host": "voicerss-text-to-speech.p.rapidapi.com",
+    "content-type": "application/x-www-form-urlencoded"
+}

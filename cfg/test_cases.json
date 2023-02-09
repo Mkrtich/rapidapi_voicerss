@@ -1,0 +1,204 @@
+{
+    "test_positive_default": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world!", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "16878"
+        }
+    },
+    "test_positive_language_en_in": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world!", "content_language": "en-in", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "17726"
+        }
+    },
+    "test_positive_speech_voice_mike": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world!", "content_language": "en-us", "speech_voice": "Mike", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "15678"
+        }
+    },
+    "test_positive_speech_rate_10": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world, testing fast codec!", "content_language": "en-us", "speech_voice": "", "speech_rate": "10", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "10078"
+        }
+    },
+    "test_positive_mpeg_codec": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world!", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "mp3", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "audio/mpeg", "Content-Length": "2555"
+        }
+    },
+    "test_positive_audio_format_48khz_8bit_mono": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world!", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "48khz_8bit_mono", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "101062"
+        }
+    },
+    "test_positive_fr_logan_10_mpeg_stereo": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, testing french combo!", "content_language": "fr-fr", "speech_voice": "", "speech_rate": "-5", "audio_codec": "mp3", "audio_format": "24khz_16bit_stereo", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/mpeg", "Content-Length": "40139"
+        }
+    },
+    "test_positive_b64_true": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "B64, true!", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": "true"
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "Content-Length": "25194"
+        }
+    },
+    "test_specific_speech_voice_olga_en": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world!", "content_language": "en-us", "speech_voice": "Olga", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "16878"
+        }
+    },
+    "test_specific_nonexisting_voice": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world! Using not existing voice", "content_language": "en-us", "speech_voice": "WrongVoice", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "36358"
+        }
+    },
+    "test_specific_nonexisting_codec": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Hello, world! Using not existing codec", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "WrongCodec", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "text/html; charset=UTF-8", "Content-Length": "37278"
+        }
+    },
+    "test_specific_speech_rate_50": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "speech rate, out of range", "content_language": "en-us", "speech_voice": "", "speech_rate": "50", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "1"
+        }
+    },
+    "test_specific_speech_rate_minus_100": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "speech rate, out of range", "content_language": "en-us", "speech_voice": "", "speech_rate": "-100", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "1"
+        }
+    },
+    "test_specific_long_txt": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "This text will be duplicated in the test function", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 414, "Content-Type": "text/html", "Content-Length": "142"
+        }
+    },
+    "test_postspec_long_txt": {
+        "input_fields": {
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "This text will be duplicated in the test function", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations": {
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The request content length is too large!"
+        }
+    },
+    "test_specific_check_en_us_mpeg_content": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "This audio will be compared with the golden: test case is test_specific_check_en_us_mpeg_content", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "mp3", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "audio/mpeg", "Content-Length": "10547"
+        }
+    },
+    "test_specific_check_russian_wav_content": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "Привет Как Дела? название теста: test_specific_check_russian_wav_content", "content_language": "ru-ru", "speech_voice": "Peter", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "audio/wav", "Content-Length": "54820"
+        }
+    },
+    "test_negative_missing_api_key": {
+        "input_fields":{ 
+            "api_key": "", "src_text": "hello", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+             "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The API key is not specified!"
+        }
+    },
+    "test_negative_invalid_api_key": {
+        "input_fields":{ 
+            "api_key": "invalid_key", "src_text": "hello", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The API key is not available!"
+        }
+    },
+    "test_negative_inactive_account": {
+        "input_fields":{ 
+            "api_key": "643caf78fae7465d8ee5a57fbcc76ce0", "src_text": "hello", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The account is inactive!"
+        }
+    },
+    "test_negative_subcription_expired": {
+        "input_fields":{ 
+            "api_key": "d52c253a3e3a437db71225791ce4725d", "src_text": "hello, will check subscription expired error", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The subscription is expired or requests count limitation is exceeded!"
+        }
+    },
+    "test_negative_missing_text": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The text is not specified!"
+        }
+    },
+    "test_negative_not_supported_language": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "hello", "content_language": "invalid_language", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The language does not support!"
+        }
+    },
+    "test_negative_missing_language": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "hello", "content_language": "", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The language is not specified!"
+        }
+    },
+    "test_negative_ssml_subscription": {
+        "input_fields":{ 
+            "api_key": "b4286158363f432596e91c3c8a6efe1f", "src_text": "ssml subscription error test", "content_language": "en-us", "speech_voice": "", "speech_rate": "", "audio_codec": "", "audio_format": "", "ssml": "true", "out_str_format": ""
+        },
+        "output_expectations":{
+            "status_code": 200, "Content-Type": "text/plain; charset=utf-8", "error_text": "ERROR: The subscription does not support SSML!"
+        }
+    }
+}
+
+
